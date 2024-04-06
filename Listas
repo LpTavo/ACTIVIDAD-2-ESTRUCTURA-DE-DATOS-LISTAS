@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+
+public class ListaPersonalizada {
+    private ArrayList<Integer> items;
+
+    public ListaPersonalizada() {
+        this.items = new ArrayList<>();
+    }
+
+    public void insertar(int elemento, int indice) {
+        this.items.add(indice, elemento);
+    }
+
+    public void eliminar(int indice) {
+        this.items.remove(indice);
+    }
+
+    public boolean buscar(int elemento) {
+        return this.items.contains(elemento);
+    }
+
+    public int acceso(int indice) {
+        return this.items.get(indice);
+    }
+
+    public static void main(String[] args) {
+        ListaPersonalizada lista = new ListaPersonalizada();
+        lista.insertar(10, 0);
+        lista.insertar(20, 1);
+        lista.insertar(30, 2);
+        lista.eliminar(1);
+        System.out.println("Elemento en la posición 1: " + lista.acceso(1));
+        System.out.println("¿El elemento 30 está en la lista? " + lista.buscar(30));
+    }
+}
