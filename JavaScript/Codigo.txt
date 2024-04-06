@@ -1,0 +1,30 @@
+class ListaPersonalizada {
+    constructor() {
+        this.items = [];
+    }
+
+    insertar(elemento, indice) {
+        this.items.splice(indice, 0, elemento);
+    }
+
+    eliminar(indice) {
+        this.items.splice(indice, 1);
+    }
+
+    buscar(elemento) {
+        return this.items.includes(elemento);
+    }
+
+    acceso(indice) {
+        return this.items[indice];
+    }
+}
+
+
+let lista = new ListaPersonalizada();
+lista.insertar(10, 0);
+lista.insertar(20, 1);
+lista.insertar(30, 2);
+lista.eliminar(1);
+console.log("Elemento en la posición 1:", lista.acceso(1));
+console.log("¿El elemento 30 está en la lista?", lista.buscar(30));

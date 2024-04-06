@@ -1,0 +1,24 @@
+class ListaPersonalizada:
+    def __init__(self):
+        self.items = []
+
+    def insertar(self, elemento, indice):
+        self.items.insert(indice, elemento)
+
+    def eliminar(self, indice):
+        del self.items[indice]
+
+    def buscar(self, elemento):
+        return elemento in self.items
+
+    def acceso(self, indice):
+        return self.items[indice]
+
+# Uso de la lista personalizada en Python
+lista = ListaPersonalizada()
+lista.insertar(10, 0)
+lista.insertar(20, 1)
+lista.insertar(30, 2)
+lista.eliminar(1)
+print("Elemento en la posición 1:", lista.acceso(1))
+print("¿El elemento 30 está en la lista?", lista.buscar(30))
